@@ -1,4 +1,4 @@
-# Project Puppy API
+# Project Puppy
 
 A full-stack application featuring a Preact frontend, a Python Flask backend, and a MySQL database, all managed with Docker.
 
