@@ -46,8 +46,6 @@ _Asegurate de tener instalado:_
     cp .env.example .env
     ```
 
-## Environment Variables | Variables de Entorno
-
     | Variable Name       | Description                                                                 | Default Value         |
     | ------------------- | --------------------------------------------------------------------------- | --------------------- |
     | MYSQL_ROOT_PASSWORD | The password for the MySQL root user. Keep this secret.                     | root_password_Example |
@@ -57,7 +55,6 @@ _Asegurate de tener instalado:_
     | BACKEND_PORT        | The external port on your local machine to access the backend API.          | 5001                  |
     | FRONTEND_PORT       | The external port on your local machine to access the frontend application. | 8080                  |
     | DB_PORT             | The external port on your local machine to connect to the MySQL database.   | 3306                  |
-
 
     _(Note: The default values in `.env.example` are configured to work with `docker-compose.yml` out of the box. You can modify them if needed.)_
 
