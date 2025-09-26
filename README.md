@@ -58,6 +58,7 @@ _Asegurate de tener instalado:_
     | FRONTEND_PORT       | The external port on your local machine to access the frontend application. | 8080                  |
     | DB_PORT             | The external port on your local machine to connect to the MySQL database.   | 3306                  |
 
+
     _(Note: The default values in `.env.example` are configured to work with `docker-compose.yml` out of the box. You can modify them if needed.)_
 
 3.  **Build and run the containers:** | **Construye y corre los contenedores:**
