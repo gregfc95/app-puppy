@@ -16,12 +16,14 @@ _Una app full-stack diseñada con un frontend de Preact, un backend de Python Fl
 ## 🚀 Getting Started | Comenzando
 
 Follow these instructions to get the project up and running on your local machine.
+
 _Este proyecto está diseñado para correr completamente dentro de contenedores de Docker_
 
 ### Prerequisites | Prerequisitos
 
 Make sure you have the following installed:
-Asegurate de tener instalado:
+
+_Asegurate de tener instalado:_
 
 - [Git](https://git-scm.com/)
 - [Docker & Docker Compose](https://www.docker.com/products/docker-desktop/)
@@ -37,6 +39,7 @@ Asegurate de tener instalado:
 
 2.  **Create the environment file:** | **Crea el archivo de entorno:**
     Copy the example environment file. This file contains all the necessary credentials and configuration variables for the services.
+
     _Copia el archivo de ejemplo. Este archivo contiene todas las credenciales y variables de configuración necesarias para los servicios._
 
     ```bash
@@ -47,6 +50,7 @@ Asegurate de tener instalado:
 
 3.  **Build and run the containers:** | **Construye y corre los contenedores:**
     This single command will build the images for the frontend and backend, pull the MySQL image, and start all the services in the background.
+
     _Este único comando construirá las imágenes para el frontend y el backend, descargará la imagen de MySQL y iniciará todos los servicios en segundo plano._
 
     ```bash
@@ -56,6 +60,7 @@ Asegurate de tener instalado:
 ### **Accessing the Application**
 
 Once the containers are running, the services will be available at:
+
 _Una vez que los contenedores estén corriendo, los servicios estarán disponibles en:_
 
 - **Frontend**: `http://localhost:8080`
@@ -67,6 +72,7 @@ _Una vez que los contenedores estén corriendo, los servicios estarán disponibl
 ## Scripts & Usage
 
 Common commands to manage the Docker environment.
+
 _Comandos comunes para manejar el entorno de Docker._
 
 - **Stop all services:** | **Detener todos los servicios:**
@@ -89,6 +95,7 @@ _Comandos comunes para manejar el entorno de Docker._
 ## ✨ Naming Conventions
 
 To maintain a clean and consistent codebase, this project follows these strict naming conventions:
+
 _Para mantener un código limpio y consistente, este proyecto sigue las siguientes convenciones de nombrado:_
 
 - **Folders**: Always `kebab-case` (e.g., `user-profile`, `api-utils`).
