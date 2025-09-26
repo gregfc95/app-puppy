@@ -28,7 +28,7 @@ _Asegurate de tener instalado:_
 - [Git](https://git-scm.com/)
 - [Docker & Docker Compose](https://www.docker.com/products/docker-desktop/)
 
-### Backend Setup (`api`)
+### Setup
 
 1.  **Clone the repository:** | **Clona el repositorio:**
 
@@ -92,7 +92,7 @@ _Comandos comunes para manejar el entorno de Docker._
   docker-compose exec backend /bin/bash
   ```
 
-## ✨ Naming Conventions
+## Naming Conventions
 
 To maintain a clean and consistent codebase, this project follows these strict naming conventions:
 
