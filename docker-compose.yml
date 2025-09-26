@@ -1,0 +1,65 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  # MySQL Database Service
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "${MYSQL_USER}", "-p${MYSQL_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # Backend Service
+  backend:
+    build: ./api
+    environment:
+      # Use a single connection string for simplicity
+      DATABASE_URL: "mysql+pymysql://${MYSQL_USER}:${MYSQL_PASSWORD}@db:3306/${MYSQL_DATABASE}"
+    ports:
+      - "${BACKEND_PORT}:5000"
+    volumes:
+      # Mounts the 'api' directory into the container.
+      # Changes in your code will be reflected without rebuilding.
+      - ./api:/app
+    depends_on:
+      db:
+        condition: service_healthy # Waits for the healthcheck to pass
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  # Frontend Service
+  frontend:
+    build: ./front-end/preact-client
+    ports:
+      - "${FRONTEND_PORT}:80"
+    volumes:
+      # Mounts the 'src' directory for hot-reloading during development
+      - ./front-end/preact-client/src:/app/src
+    restart: unless-stopped
+    networks:
+      - app-network
+
+# Named volume for data persistence
+volumes:
+  db-data:
+
+# Define a network for services to communicate
+networks:
+  app-network:
+    driver: bridge

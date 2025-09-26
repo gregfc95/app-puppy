@@ -1,0 +1,33 @@
+# .gitignore
+
+#Python/Backend
+api/venv/
+api/__pycache__/
+
+# Node/Frontend
+frontend/preact-client/node_modules
+
+# Logs
+front-end/preact-client/npm-debug.log*
+front-end/preact-client/yarn-debug.log*
+front-end/preact-client/yarn-error.log*
+
+# Production build
+front-end/preact-client/build/
+front-end/preact-client/dist/
+
+
+#Enviroment Variables
+.env
+api/.env
+front-end/preact-client/.env
+
+# IDE and Editor Configs
+.vscode/
+.idea/
+*.swp
+
+# OS-generated files
+
+.DS_Store
+Thumbs.db

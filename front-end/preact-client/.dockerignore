@@ -1,0 +1,21 @@
+# Git
+.git
+.gitignore
+
+# Node dependencies
+node_modules
+npm-debug.log
+
+# Build output
+build
+dist
+
+# Environment files
+.env
+
+# IDE and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
